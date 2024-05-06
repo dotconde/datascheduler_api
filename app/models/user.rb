@@ -22,4 +22,25 @@ class User < ApplicationRecord
   def switch_company_and_role(new_company_id, new_role)
     self.profile.update!(role: new_role, company_id: new_company_id)
   end
+
+  # Permissions 
+  def admin?
+    self.profile&.admin?
+  end
+
+  def collaborator?
+    self.profile&.collaborator?
+  end
+
+  def can_manage_events_of?(profile)
+    can_view_events_of?(profile) && can_create_event_for?(profile)
+  end
+
+  def can_view_events_of?(profile)
+    self.admin? && profile.company == self.profile.company
+  end
+
+  def can_create_event_for?(profile)
+    self.admin? && profile.company == self.profile.company
+  end
 end
