@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Datascheduler API
 
-Things you may want to cover:
+Entity Relationship Diagram:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![ERD Datascheduler](https://res.cloudinary.com/dotconde/image/upload/v1715126896/datascope_db_wy9gpy.png)
